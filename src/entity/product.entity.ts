@@ -87,9 +87,9 @@ export class Product extends Base {
   @ApiProperty({ description: '删除状态' })
   deleteStatus: DelStatus;
 
-  @Column({ comment: '上架状态 0 -> 未上架 1 -> 已上架',  default: PublishStatus.no, enum:PublishStatus })
+  @Column({ comment: '上架状态 0 -> 未上架 1 -> 已上架',  default: 0,})
   @ApiProperty({ description: '上架状态' })
-  publishStatus: PublishStatus;
+  publishStatus: number;
 
   @Column({ comment: '新品状态 0 -> 不是新品 1 -> 是新品', type: 'int', default: 0 })
   @ApiProperty({ description: '新品状态' })

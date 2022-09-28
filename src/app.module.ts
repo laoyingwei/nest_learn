@@ -33,7 +33,7 @@ import { MemeberreceiveaddressModule } from './modules/memeberreceiveaddress/mem
 // import { TasksService } from './schedule/tasks/tasks.service';
 import { TasksModule } from './schedule/tasks/tasks.module';
 import { ScheduleModule } from '@nestjs/schedule';
-// import { QueueModule } from './modules/queue/queue.module';
+import { QueueModule } from './modules/queue/queue.module';
 import { UploadModule } from './modules/upload/upload.module';
 @Module({
   imports: [
@@ -73,7 +73,7 @@ import { UploadModule } from './modules/upload/upload.module';
     MemeberreceiveaddressModule,
     ScheduleModule.forRoot(),
     TasksModule,
-    // QueueModule,
+    QueueModule,
     UploadModule,
     
   ],

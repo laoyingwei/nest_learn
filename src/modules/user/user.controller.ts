@@ -38,4 +38,48 @@ export class UserController {
   async create() {
     return await this.userService.createUser();
   }
+
+  @Get("/info")
+  @NoAuth()
+  getUserInfo () {
+    return {
+         routeTrees: [
+
+              {
+                  key: '/',
+                  icon: 'BackwardOutlined',
+                  name: '首页',
+                  path: '/',
+                  component: 'index',
+              },
+              {
+                  key: '/good',
+                  icon: 'BackwardOutlined',
+                  name: '商品',
+                  path: '/good',
+                  component: 'good',
+              },
+              {
+                  key: '/good/detail',
+                  icon: 'BackwardOutlined',
+                  name: '商品详情',
+                  path: '/good/detail',
+                  component: 'good/detail',
+                  hideInMenu: true
+              }
+
+        ],
+        permissions: {
+              '/add': {
+                  type: 'primary',
+                  text: '添加'
+              },
+              '/good/add': {
+                  type: 'primary',
+                  text: '添加'
+              }
+          },
+      
+      }
+  }
 }
